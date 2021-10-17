@@ -5,159 +5,201 @@
     font-weight: normal;
     color: #fff;
     scroll-behavior: smooth;
- }
- 
- *,
- *::before,
- *::after {
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
- }
- 
- body {
+}
+
+body {
     margin: 0;
     position: relative;
- }
- 
- img {
+}
+
+img {
     width: 100%;
- }
- 
- p {
+}
+
+p {
     font-size: 1.1rem;
- }
- 
- #slider {
+}
+
+#slider {
     margin: 0 auto;
     max-width: 50vw;
     text-align: center;
     background: #030303;
- }
- 
- #slider input[type=radio] {
+}
+
+#slider input[type=radio] {
     display: none;
- }
- 
- #slider label:hover {
+}
+
+#slider label:hover {
     cursor: pointer;
- }
- 
- #slider label:hover span {
+}
+
+#slider label:hover span {
     cursor: pointer;
     background-color: white;
- }
- 
- #slides {
+}
+
+#slides {
     padding: 2% 3% 3% 3%;
     background: #030303;
     position: relative;
     z-index: 1;
- }
- 
- #overflow {
+}
+
+#overflow {
     width: 100%;
     border-radius: 1vw;
     overflow: hidden;
- }
- 
- #slide1:checked~#slides .inner {
+}
+
+#slide1:checked~#slides .inner {
     margin-left: 0;
- }
- 
- #slide2:checked~#slides .inner {
+}
+
+#slide2:checked~#slides .inner {
     margin-left: -100%;
- }
- 
- #slide3:checked~#slides .inner {
+}
+
+#slide3:checked~#slides .inner {
     margin-left: -200%;
- }
- 
- #slide4:checked~#slides .inner {
+}
+
+#slide4:checked~#slides .inner {
     margin-left: -300%;
- }
- 
- #slides .inner {
+}
+
+#slides .inner {
     transition: margin-left 0.2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
     width: 400%;
     line-height: 0;
- 
- }
- 
- #slides .slide {
+
+}
+
+#slides .slide {
     width: 25%;
     float: left;
- }
- 
- #bullets {
+}
+
+#bullets {
     display: inline-block;
- 
- }
- 
- #bullets label {
+
+}
+
+#bullets label {
     padding: 0.5vw;
- }
- 
- #bullets span {
+}
+
+#bullets span {
     display: inline-block;
     width: 0.8vw;
     height: 0.8vw;
     border-radius: 50%;
     background: royalblue;
- }
- 
- #slide1:checked~.bottom #bullets label .span1,
- #slide2:checked~.bottom #bullets label .span2,
- #slide3:checked~.bottom #bullets label .span3,
- #slide4:checked~.bottom #bullets label .span4 {
+}
+
+#slide1:checked~.bottom #bullets label .span1,
+#slide2:checked~.bottom #bullets label .span2,
+#slide3:checked~.bottom #bullets label .span3,
+#slide4:checked~.bottom #bullets label .span4 {
     background: #030303 content-box;
     border: 1px solid royalblue;
- }
- 
- #slide2:checked~.bottom #bullets label:nth-child(2):hover span,
- #slide3:checked~.bottom #bullets label:nth-child(3):hover span,
- #slide1:checked~.bottom #bullets label:nth-child(1):hover span,
- #slide4:checked~.bottom #bullets label:nth-child(4):hover span {
+}
+
+#slide2:checked~.bottom #bullets label:nth-child(2):hover span,
+#slide3:checked~.bottom #bullets label:nth-child(3):hover span,
+#slide1:checked~.bottom #bullets label:nth-child(1):hover span,
+#slide4:checked~.bottom #bullets label:nth-child(4):hover span {
     border: 1px solid white;
- }
- 
- #bullets label:nth-child(4) {
+}
+
+#bullets label:nth-child(4) {
     padding-right: 0;
- }
- 
- .bottom {
+}
+
+.bottom {
     padding: 0 3% 10% 3%;
     display: flex;
     flex-flow: row-reverse;
     justify-content: space-between;
     max-height: 30vh;
- }
- 
- .item1,
- .item2,
- .item3,
- .item4 {
+}
+
+.item1,
+.item2,
+.item3,
+.item4 {
     display: none;
- }
- 
- #slide1:checked~.bottom .item1,
- #slide2:checked~.bottom .item2,
- #slide3:checked~.bottom .item3,
- #slide4:checked~.bottom .item4 {
+}
+
+#slide1:checked~.bottom .item1,
+#slide2:checked~.bottom .item2,
+#slide3:checked~.bottom .item3,
+#slide4:checked~.bottom .item4 {
     display: block;
- 
- }
- 
- .slide-left {
+
+}
+
+.slide-left {
     animation: slide-left 0.2s linear forwards;
- }
- 
- @keyframes slide-left {
+}
+
+@keyframes slide-left {
     0% {
-       transform: translateX(+40px);
+        transform: translateX(+40px);
     }
- 
+
     100% {
-       transform: translateX(0px);
+        transform: translateX(0px);
     }
- }
- 
- 
+}
+
+@media screen and (max-width: 375px) {
+
+    #slider {
+        max-width: 100%;
+        text-align: center;
+        background: #030303;
+    }
+
+    #overflow {
+        border-radius: 3vw;
+    }
+
+    #slides {
+        padding: 3% 4% 0% 4%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .bottom {
+        flex-flow: column;
+        padding: 0 4% 30% 4%;
+        max-height: 10vh;
+    }
+
+    .bottom-left {
+        padding-top: 4%;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    #bullets label {
+        padding: 1vw;
+    }
+
+    #bullets {
+        padding-top: 4%;
+    }
+
+    #bullets span {
+        width: 3vw;
+        height: 3vw;
+    }
+}
